@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Barnsley Fern SVG Generator</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Barnsley Fern SVG Generator" />
+    <meta name="keywords" content="barnsley fern, svg, fractal, barnsley farn, javascript, html5" />
+    <meta name="author" content="Ikaros Kappler" />
+    <meta name="date" content="2017-03-24" />
+
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" /> -->
+    <script src="lib/jquery-3.2.0.min.js"></script>
+    <script src="barnsley.js"></script>
+    <script src="main.js"></script>
+
+    <style>
+      body, canvas, svg { display : inline-block; }
+      input[type=number] { width : 75px; }
+    </style>
+  </head>
+
+  <body> <!-- onload="pBarnsleyFern('canvas', 100000)"> -->
+    <h3>Barnsley fern SVG generator</h3>
+    <div id="matrix_input">
+      Iterations: <input type="number" id="iterations" value="100000" step="100" /><br/>
+    </div>
+    <!--
+    <svg width="540" height="540">
+      <defs>
+	path.brnsly {
+	
+	}
+      </defs>
+      <g>
+	<path id="_barnsley_path_template"/>
+      </g>
+    </svg>
+-->
+    <canvas id="my_canvas" width="540" height="540"></canvas>
+    
+  </body>
+</html>

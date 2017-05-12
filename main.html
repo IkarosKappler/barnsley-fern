@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Barnsley Fern Animation Generator</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Barnsley Fern SVG Generator" />
+    <meta name="keywords" content="barnsley fern, svg, fractal, barnsley farn, javascript, html5" />
+    <meta name="author" content="Ikaros Kappler" />
+    <meta name="date" content="2017-03-24" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="lib/jquery-3.2.0.min.js"></script>
+    <script src="barnsley.js"></script>
+    <script src="AnimationRenderer.js"></script>
+    <script src="main.js"></script>
+  </head>
+
+  <body> 
+    <h3>Friendly Barnsley Fern Generator</h3>
+    <div id="left">
+	Number of random points: <input type="number" id="iterations" value="10000" step="100" /><br/>
+	<img src="equation.svg" alt="Barnsley Fern Equation SVG" /><br/>
+    </div>
+    <div id="right">
+      Animate<br/>
+      Column
+      <select id="field_name">
+	<option value="a">a</option>
+	<option value="b">b</option>
+	<option value="c" selected="selected">c</option>
+	<option value="d">d</option>
+	<option value="e">e</option>
+	<option value="f">f</option>
+      </select>
+      Row
+      <select id="row_name">
+	<option value="f0">f<sub>0</sub></option>
+	<option value="f1" selected="selected">f<sub>1</sub></option>
+	<option value="f2">f<sub>2</sub></option>
+	<option value="f3">f<sub>3</sub></option>
+      </select><br/>
+      <div class="label">Start value</div> <input type="number" id="from_value" value="-0.04" step="0.01" /><br/>
+      <div class="label">Step count</div> <input type="number" id="step_count" value="100" step="100" /><br/>
+      <div class="label">Step</div> <input type="number" id="step" value="-0.01" /><br/>
+      <div class="label">FPS</div> <input type="number" id="fps" value="30" /><br/>
+
+      <button type="button" id="render_next">Render Next</button>
+      <button type="button" id="render_all">Render All …</button><br/>
+      Render value: <span id="render_value">NA</span> (image <span id="render_index">0</span>)<br/>
+      <button type="button" id="play">Play …</button>
+      <button type="button" id="reset">Reset</button><br/>
+    </div>
+    <br/>
+    Matrix values:
+    <table id="matrix_input">
+      <thead>
+	<tr>
+	  <td>w</td>
+	  <td>a</td>
+	  <td>b</td>
+	  <td>c</td>
+	  <td>d</td>
+	  <td>e</td>
+	  <td>f</td>
+	  <td>p</td>
+	  <td>Portion Generated</td>
+	</tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <canvas id="my_canvas" width="540" height="540"></canvas>
+    <img id="animation_preview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="540" height="540" alt="Animation result placeholder" />
+
+    <div id="overlay">Rendering ...<br/><button type="button" id="cancel_render">Cancel</button></div>
+  </body>
+</html>
